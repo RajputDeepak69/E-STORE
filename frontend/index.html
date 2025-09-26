@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini E‑Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>BGMI STORE 💀</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('products')">Products</a>
+    <a href="#" onclick="showSection('cart')">Cart (<span id="cart-count">0</span>)</a>
+    <a href="#" onclick="showSection('auth')"><span id="nav-auth">Login</span></a>
+  </nav>
+
+  <div class="container">
+    <!-- Products Section -->
+    <section id="products">
+      <h2>Available Products</h2>
+      <div class="products" id="products-list"></div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" style="display: none;">
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p><strong>Total: $<span id="cart-total">0.00</span></strong></p>
+      <button onclick="checkout()">Checkout</button>
+    </section>
+
+    <!-- Auth Section -->
+    <section id="auth" style="display: none;">
+      <h2 id="auth-title">Login</h2>
+      <div id="auth-form">
+        <input type="email" id="auth-email" placeholder="Email"><br>
+        <input type="password" id="auth-password" placeholder="Password"><br>
+        <button onclick="login()">Login</button>
+        <button onclick="register()">Register</button>
+      </div>
+      <div id="auth-loggedin" style="display:none;">
+        <p>Welcome, <span id="user-email"></span> 🎉</p>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </section>
+    <!-- Admin Section -->
+    <section id="admin" style="display:none;">
+     <h2>👑 Admin Dashboard</h2>
+     <button onclick="loadAllUsers()">Get All Users</button>
+     <ul id="users-list"></ul>
+    </section>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
